@@ -1,0 +1,82 @@
+Text commands that are specifically interpreted and displayed in HTML or TeX mode.
+NOTE: Most Commands usually require line-break to end the scope.
+----------------------------------------------------------------------------------
+
+# Just paste a link, it will be recognised as a link.
+# It should not contain whitespaces.
+
+    http://...
+
+# Itemize with a leading dash followed by a space.
+
+    - something
+    - something else
+
+# Create a table with | as column seperation.
+
+    | a | b | c |
+    | 1 | 3 | 2 |
+
+# Display an image.
+# Only the filename is required when located in the same directory as the section.
+# Caption text is arbitrarily long. The stared version spans it over 2 columns in TeX mode.
+
+    IMG relative_path caption text
+    IMG* relative_path caption text
+
+# Links to a given file.
+
+    FILE path
+
+# Marks text as a todo.
+
+    TODO text
+
+# Marks text as a question.
+
+    ASK text
+
+# Marks text as a research question.
+
+    RQ text
+
+# Marks text as a finding.
+
+    AHA text
+
+# Marks text as a reference.
+# Arbitrary addional information can be added via comma seperation and can be toggled in HTML mode.
+# The identifier must have a text and a year to make LaTeX understand it!
+# The (REF ) version can be inline and does not require line ending.
+
+    REF identification, title, and, other, stuff, url
+    (REF identification, title, and, other, stuff, url ) 
+    
+    # eg.
+    REF Smith 2014
+    REF Smith 2014, page 4, about snow effect, http://www.wikipedia.de/Snow
+
+# Marks text as a quote, followed by a reference command to relate the source.
+
+    CITE a long quote from a paper or someone REF supervisor meeting 2014
+
+# Places a flag to which you can jump via a SEE command. It is like \label in LaTeX.
+
+    FLAG name
+
+# Adds an internal link to the flag with the same name.
+
+    SEE name
+
+# The AUTHORS command only works in the Abstract (first-level .txt file of a venture).
+# It defines the list of authors shown in TeX mode, which is config/authors.txt by default.
+
+    AUTHORS Hans Wurst, Peter Lustig
+
+# Insert inline or centered full-line or multi-line equations using the usual TeX markup.
+
+    # eg.
+    normal text, $E=mc^2$, normal text
+    normal text, \[ E=mc^2 \,, \] normal text
+    normal text, \begin{align} E &= mc^2 \\ E &= h\nu \,, \end{align} normal text
+

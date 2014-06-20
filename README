@@ -1,35 +1,129 @@
 Ventures v1.0, 2014-06-20
--------------------------
-http://
--------------------------
+https://github.com/mschroen/ventures
+
+INSTALL
+-------
+
+Follow the instructions in the INSTALL file.
+
 
 SHORT DESCRIBTION
 -----------------
 
-A notebook interface for simple files and folders. Work on the projects via terminal, explorer, or web interface. TeX the whole thing with a click. Create fancy reports within a minute. Ventures allows you to write articles and take mind notes quickly and progressively.
+Easily note, browse and print your scientific projects (which I call ventures)!
+
+A notebook interface for simple files and folders.
+Work on the projects via terminal, explorer, or web interface.
+TeX the whole thing with a click.
+Create fancy reports within a minute.
+Ventures allows you to write articles and take mind notes quickly and progressively.
+
 
 WORKFLOW
 --------
 
-Ventures does not dictate how you should work. In the chapters/ directory you are completly free to 
-- create (sub)folders for every (sub)section, while the first-level folder denotes a self-contained venture/project,
-- create a .txt file with the name of the containing folder denotes the section content text,
-- add/remove files of all types in any folder.
-
-With these rules, you can work on your projects via
+Ventures does not dictate how you should work, eg via
 - terminal,
 - explorer, or
-- webinterface,
-while the webinterface is not able to add or remove additional files (that are not section content).
+- web interface,
+while the web interface is not able to add or remove additional files
+(that are not section content).
+
+STRUCTURE
+---------
+
+chapter/
+	All your data will be in that folder
+	You can sync this folder, add it to a dropbox or whatever you want.
+
+chapter/name/
+	Every subfolder denotes a self-contained project.
+	If you create folders manually (via terminal or Explorer),
+	try to prevent whitespaces in the name.
+	
+chapter/name/name.txt
+	This is the section content text. Since this is directly below
+	the first level of your project, this file denotes the Abstract.
+	When teXing, it should not contain large elements or images.
+	
+chapter/name/name.pdf
+	Once you compiled your project with TeX on the web interface
+	its pdf will show up here.
+	
+chapter/name/*
+	Add files and subfolders (==sections) as you want
+
+chapter/name/index
+	You do not need to touch this file,
+	in stores the order of appearance of the subfolders (sections).
+
+clipboard/
+	If you want to remove a section (folder) temperally in order
+	to use or paste it later on, move it here.
+	
+trash/
+	If you want to delete a section (folder) but do not dare to 
+	erase it irretrievably, move it here.
+	The web interface will always "delete" sections this way.
 
 
-NOTES
------
+WORKFLOW (Web interface)
+------------------------
 
-(1) The first level text (directly after the first heading of a project) is treated as the abstract. Try to avoid putting images or complex structures into the abstract.
+The "Ventures" logo brings you always a page that shows
+all your ventures subsequently. You can search all projects here,
+but you can not TeX them.
 
-(2) If you create folders manually, try to prevent whitespaces in the name.
+Add ventures with the "+" button on the top. 
+Enter a venture to show only its content. Now you can TeX it.
+In the clipboard you find cutted sections.
+Add a section with the small "+" line that will glow green.
 
-(3) If you open PDFs in the tex/ directory, another TeX run can not overwrite it and will fail. If you open the PDF in the chapter's directory, Ventures can not update (replace) it after another TeX run. In the case that you want to have the PDF open all the time and like to see updates immediatly, I recommend to open the PDF in the chapter's directory with the software "Evince". It is a lightweight PDF viewer that does not lock the file and automagically refreshes on modification.
+NOTE:
+If you open PDFs in the tex/ directory, another TeX run can not overwrite it
+and will fail. If you open the PDF in the chapter's directory,
+Ventures can not update (replace) it after another TeX run.
+In the case that you want to have the PDF open all the time and
+like to see updates immediatly, I recommend to open the PDF in
+the chapter's directory with the software "Evince".
+It is a lightweight PDF viewer that does not lock the file and
+automagically refreshes on modification.
 
+
+IMAGE SUPPORT
+-------------
+
+We experienced that both web browsers and LaTeX are supporting
+the following image formats very well:
+.png (use this for usual pixel images)
+.svg (use this for vector graphics like scientific plots)
+
+Before including the svg files to LaTeX, they will be converted
+to pdf. All images needed for LaTeX are copied to tex/img/
+
+
+WANT TO DO MORE CHANGES ON THE TEX FILES?
+-----------------------------------------
+
+In a final state, you can just go to the folder tex/ and compile
+the files directly with a TeX compiler. Or take the code out and
+move it to your independent thesis or paper project. Just keep in
+mind that the files in tex/ are overwritten when calling TeX again.
+
+
+TECHNICAL WORKFLOW (If you want to know how it works)
+------------------
+
+At localhost, your web browser calls the web server (eg. Apache).
+The webserver then will look into the ventures directory and call
+"perl" to run the .pl scripts. Perl will look into the chapter/
+directory and translate the folders and files into HTML code,
+which results in a nice looking web interface. Most of the features
+provided by the web interface are simple file operations like save,
+rename or move, called from perl scripts. When the HTML website is
+displayed, a java script library "MathJax" will look for TeX code
+on the page and display it properly. The button "TeX" will call
+another perl script that translates the text files into TeX code
+located in the tex/ folder. The script then calls simply "pdflatex" 
+on these scripts to create the pdf.
 

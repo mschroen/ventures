@@ -94,7 +94,7 @@ ul.links a { display: inline-block; width: auto; font-size: 1.2em; padding: 5px;
 ul.links a:hover {	background-color: #DCA; }
 
 ul.links { padding: 0; margin: 0 0 1em 1em; list-style-type: none; display: inline-block; vertical-align: middle; }
-ul.links li { display: inline-block; margin: 5px 5px 0 0; padding: 0; vertical-align: top; }
+ul.links li { display: inline-block; margin: 5px 0 0 0; padding: 0; vertical-align: top; }
 ul.links a { display: inline-block; width: auto; font-size: 1em; padding: 1px 5px;
 	text-decoration: none; color: #420; background-color: #CB9; }	
 ul.links a:hover { background-color: #DCA; }
