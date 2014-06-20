@@ -1,4 +1,4 @@
-﻿#!perl -w
+#!perl -w
 $|=1;
 no warnings 'uninitialized';
 use lib 'mods';
@@ -80,7 +80,7 @@ elsif ($PASTE)
 elsif ($NEW) 
 {
 	my $name = F::nice2filename($NEW);
-	mkdir $DIR.$name or die $!." mkdir $DIR$name\n";
+	if (not mkdir $DIR.$name) { print "Content-type:text/html\n\n".$!." mkdir $DIR$name\n"; exit; }
 	
 	my @index = ();
 	if (-f $DIR.'index') {

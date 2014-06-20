@@ -275,18 +275,18 @@ function addventure_go(e)
 {
     if (e.keyCode == 13)
     {
-        var xmlHttpReq = false;
-        var self = this;
+        var req = false;
+        var s = this;
         var feld = document.getElementById("addventure");
         var dirname = feld.value;
         feld.value = '...';
-        if (window.XMLHttpRequest) { self.xmlHttpReq = new XMLHttpRequest(); }
-        else if (window.ActiveXObject) { self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP"); }
-        self.xmlHttpReq.open('POST', '/ventures/add.pl', true);
-        self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        self.xmlHttpReq.onreadystatechange = function() {
-            if (self.xmlHttpReq.readyState == 4) { window.location.reload(); }
-            else { feld.value = '...'; }}
-        self.xmlHttpReq.send('dir=chapter/&ipos=-1&newsectionname='+dirname);
+        if (window.XMLHttpRequest) { s.req = new XMLHttpRequest(); }
+        else if (window.ActiveXObject) { s.req = new ActiveXObject("Microsoft.XMLHTTP"); }
+        s.req.open('POST', '/ventures/add.pl', true);
+        s.req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        s.req.onreadystatechange = function() {
+            if (s.req.readyState == 4) { window.location.reload(); }}
+            /*else { msg.innerHTML = s.req.responseText; } */
+        s.req.send('dir=chapter/&ipos=-1&newsectionname='+dirname);
         return false; }
 }

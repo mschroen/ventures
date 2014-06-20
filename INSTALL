@@ -74,10 +74,15 @@ Backup
 
 In order back up your files regulary to a (remote) directory, you may use and adapt sync2y.bat to your needs. If you do not have "rsync", you need to install "cygwin" from the internet and add its "bin" path to the system path.
 
--------
-Updates
--------
+----------------------
+Get Ventures or Update
+----------------------
 
-You can download the current version from https://github.com/mschroen/ventures
-Extract the files into the ventures directory, they should integrate theirselves automatically into the different subdirectories.
-Or use "git checkout" if you have git.
+You can download the current version as a zip file from https://github.com/mschroen/ventures
+Or use "git clone https://github.com/mschroen/ventures.git" in
+apache/htdocs/ to initially create a fresh local repo.
+Or "git pull" if you want to update your local git repository.
+
+NOTE: If you downloaded ventures the first time, you might need to
+"chmod -R 0777 *" the whole directory to give apache writing permissions.
+Otherwise no files or folders can be creates in the web interface.

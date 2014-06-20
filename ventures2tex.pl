@@ -1,4 +1,4 @@
-﻿#!perl -w
+#!perl -w
 $|=1;
 no warnings 'uninitialized';
 use lib 'mods';
@@ -87,7 +87,7 @@ my $FHMAIN = undef;
 				s/^(.*error.*)$/\<span style="color:red;font-weight:bold">$1\<\/span\>/i;
 				s/^(\!.*)$/\<span style="color:red;font-weight:bold">$1\<\/span\>/i;
 				s/^(.*warning.*)$/\<span style="color:orange;font-weight:bold">$1\<\/span\>/i;
-				s/^(.*Transcript written.*)$/\<span style="color:green;font-weight:bold">$1\<\/span\>/i;
+				s/^(.*Output written.*)$/\<span style="color:green;font-weight:bold">$1\<\/span\>/i;
 				print;
 				}
 			copy($CHAPTER.'.pdf', '../chapter/'.$CHAPTER.'/'.$CHAPTER.'.pdf')
