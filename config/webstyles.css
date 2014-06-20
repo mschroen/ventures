@@ -1,0 +1,33 @@
+/*
+    - Customizable css style sheets for the web browser interface.
+    - Overwrites mods/css/main.css
+    - This file will not be overwritten by updates.
+*/
+
+/* Change global font color here */
+html,button,input,select,textarea {
+    color: #222; }
+
+/* Change font family for section headings and special text. */
+/* Some fonts are located in mods/fonts/ and should be installed before. */
+.sans, .sans *, h1, h2, h3, h4, h5, h6, h7, button, input  {
+	font-family: "Fredericka the Great",
+	'Helvetica',
+	Arial,
+	sans-serif; }
+
+/* Change font size/lineheight and family for the main content text. */
+/* Some fonts are located in mods/fonts/ and should be installed before. */
+body, textarea {
+    font: 24px/26px
+    "DK Crayon Crumble",
+    Vollkorn,
+    Cambria,
+    Palatino,
+    "DejaVu Serif",
+    "Droid Serif",
+    serif; }
+
+/* Change background color or image here. */
+body {
+    background-color: #BA8; }

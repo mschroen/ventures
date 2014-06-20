@@ -1,0 +1,52 @@
+*** Perl
+
+The while thing runs with perl, so you need to have a perl interpreter on your system. On windows I recommend to install "Strawberry perl". Once installed, your system path should know "perl", which is located in the "strawberry/perl/bin" directory.
+Open the command line and install additional modules by typing
+    cpan
+    install File::Copy
+    install CGI::Carp
+Use "force install" if the first attempt does not work out well.
+
+*** Webserver
+
+You need a running webserver to display ventures on the browser. I recommend to install "Apache" to a simple path like "C:/apache".
+Ventures should be located in its subdirectory "htdocs", ie. "apache/htdocs/ventures".
+The Apache process should be running whenever you want to use ventures, so I recommend to put it into the system's autorun directory. If the Apache Monitor has problems, you can execute "apache/bin/httpd.exe" alternatively.
+Open "config/httpd.conf" and make sure to change the following settings:
+    <IfModule dir_module>
+        DirectoryIndex index.html index.htm index.pl
+    <IfModule mime_module>
+        AddHandler cgi-script .cgi .pl
+    <Directory "c:/apache/htdocs">
+        Options ... ExecCGI
+
+When everything is set correctly, typing "localhost" in the browser should show something. Then, "localhost/ventures" should show the ventures interface. If not, make sure that all files in apache/htdocs/ventures have 0755 rights. You could set the rights by going to the "apache/htdocs" directory via command line and type "chmod -R 0777 ventures". The "chmod" is available through "cygwin", which you might need to download and path first.
+
+*** TeX
+
+To create PDFs directly from ventures, you need to have "pdflatex" in the system path. I recommend to install the current version of "TeXLive", but any distribution will do. To make sure that all TeX packages are installed, open tex/test.tex with your TeX editor and compile it with pdflatex. You should be asked to install missing packages.
+
+*** MathJax
+
+To display TeX code in the web browser, install MathJax from http://www.mathjax.org/download/
+Copy all files in a "mathjax" folder one level up from ventures, eg. to apache/htdocs/mathjax/
+
+*** Fonts
+
+You can change the fonts of the web interface in config/webstyles.css
+If you want to use my favourite fonts, go to mods/fonts/ and install them.
+You can change the fonts of the tex files by inserting your individual tex commands in config/template.tex
+They should overwrite the commands used in tex/preamble.tex
+      
+*** More custom Styles
+
+I can only say that files in the directory config/ are not overwritten during updates. So you should try to add your style sheets there in order to overwrite the default settings. Any other changes made for example in the tex/ files should be backed up before updating and it will be your job to merge them back.
+
+*** Backup
+
+In order back up your files regulary to a (remote) directory, you may use and adapt sync2y.bat to your needs. If you do not have "rsync", you need to install "cygwin" from the internet and add its "bin" path to the system path.
+
+*** Updates
+
+You can download cumulative updates from sman.kyomu.43-1.org/ventures
+Extract the files into the ventures directory, they should integrate theirselves automatically into the different subdirectories. The folder "config" is never touched.

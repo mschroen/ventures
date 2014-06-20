@@ -1,0 +1,35 @@
+Ventures v1.0, 2014-06-20
+-------------------------
+http://
+-------------------------
+
+SHORT DESCRIBTION
+-----------------
+
+A notebook interface for simple files and folders. Work on the projects via terminal, explorer, or web interface. TeX the whole thing with a click. Create fancy reports within a minute. Ventures allows you to write articles and take mind notes quickly and progressively.
+
+WORKFLOW
+--------
+
+Ventures does not dictate how you should work. In the chapters/ directory you are completly free to 
+- create (sub)folders for every (sub)section, while the first-level folder denotes a self-contained venture/project,
+- create a .txt file with the name of the containing folder denotes the section content text,
+- add/remove files of all types in any folder.
+
+With these rules, you can work on your projects via
+- terminal,
+- explorer, or
+- webinterface,
+while the webinterface is not able to add or remove additional files (that are not section content).
+
+
+NOTES
+-----
+
+(1) The first level text (directly after the first heading of a project) is treated as the abstract. Try to avoid putting images or complex structures into the abstract.
+
+(2) If you create folders manually, try to prevent whitespaces in the name.
+
+(3) If you open PDFs in the tex/ directory, another TeX run can not overwrite it and will fail. If you open the PDF in the chapter's directory, Ventures can not update (replace) it after another TeX run. In the case that you want to have the PDF open all the time and like to see updates immediatly, I recommend to open the PDF in the chapter's directory with the software "Evince". It is a lightweight PDF viewer that does not lock the file and automagically refreshes on modification.
+
+

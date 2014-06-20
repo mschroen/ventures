@@ -1,0 +1,131 @@
+﻿%%% Preamble
+
+	\usepackage{amsthm} %?
+	\usepackage{amsmath,amssymb} %?
+	\usepackage{xspace} %?
+	\usepackage{graphicx}
+	\usepackage{epsfig,wrapfig, color,xcolor}
+	\usepackage{hyperref, color}
+	\usepackage{float}
+	\usepackage{pifont}
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+            
+%%% short cuts
+
+	\usepackage{MnSymbol} %?
+	\newcommand\Ldots{\mathop{\lower.5ex\hbox{$\hdots$}}}
+
+	\def \seeterm{see}
+%	\newcommand{\dt}{\mathrm{d}}
+	\renewcommand{\vec}[1]{\boldsymbol{#1}} %\mathbf
+	\newcommand{\shouldbe}{\stackrel{!}{=}}
+
+%	\newcommand{\mono}[1]{\texttt{#1}}
+%	\newcommand{\bb}[1]{\textbf{#1}}
+%	\newcommand{\pp}[1]{\paragraph{#1}}
+
+	\newcommand{\Flash}{\texttt{FLASH}\,}
+	\newcommand{\Shape}{\text{Shape}}
+	\newcommand{\TE}{\text{TE}}
+	\newcommand{\const}{\text{const}}
+	\newcommand{\C}{\text{c}}
+
+	\newcommand{\maxx}{\text{max}}
+	\newcommand{\minn}{\text{min}}
+
+	\newcommand{\acc}{\text{acc}}
+	\newcommand{\mass}{\text{mass}}
+	\newcommand{\wind}{\text{wind}}
+	\newcommand{\rot}{\text{rot}}
+	\newcommand{\rad}{\text{rad}}
+	\newcommand{\out}{\text{out}}
+	\newcommand{\vK}{v_\textsc{k}}
+	\newcommand{\ff}{\text{f{}f}}
+	\newcommand{\cell}{\text{cell}}
+	\newcommand{\SP}{\text{sp}}
+	\newcommand{\rel}{\text{rel}}
+	\newcommand{\com}{\text{com}}
+	\newcommand{\old}{\text{,old}}
+	\newcommand{\new}{\text{new}}
+	\newcommand{\kin}{\text{kin}}
+	\newcommand{\magn}{\text{magn}}
+	\newcommand{\grav}{\text{grav}}
+	\newcommand{\Alf}{\text{A}}
+	\newcommand{\core}{\text{core}}
+	\newcommand{\crit}{\text{crit}}
+	\newcommand{\J}{\text{J}}
+	\newcommand{\sound}{\text{s}}
+	\newcommand{\rms}{\text{rms}}
+	\newcommand{\REF}{\color{red}\text{REF}\color{black}}
+%	\newcommand{\CITE}{\color{orange}\text{CITE}\color{black}}
+	\newcommand{\KORREKTURbegin}{\color{green}\text{KORREKTUR ab hier}\color{black}}
+	\newcommand{\KORREKTURend}{\color{green}\text{KORREKTUR bis hier}\color{black}}
+
+	\newcommand{\ord}[1]{\cdot 10^{#1}}
+%	\newcommand{\kms}{\;\text{km}\,\text{s}^{-1}}
+%	\newcommand{\AU}{\;\text{AU}}
+	\newcommand{\cm}{\;\text{cm}}
+	\newcommand{\disk}{\text{disk}}
+	\newcommand{\km}{\;\text{km}}
+	\newcommand{\g}{\;\text{g}}
+	\newcommand{\s}{\;\text{s}}
+	\newcommand{\K}{\;\text{K}}
+%	\newcommand{\pc}{\;\text{pc}}
+%	\newcommand{\yr}{\;\text{yr}}
+	\newcommand{\Mpyr}{\;M_\odot\,\text{yr}^{-1}}
+	\newcommand{\mum}{\;\mu\text{m}}
+
+	\renewcommand{\proofname}{{\it Proof}} %? needed in english?
+	\newcommand{\ub}{\underline{b}}
+	\newcommand{\Rd}{\ensuremath{\mathbb{R}^d}}
+	\newcommand{\Rdd}{\ensuremath{\mathbb{R}^{d+1}}}
+	\newcommand{\Rdp}{\mathbb{R}_{\ge 0}^d}
+	\newcommand{\e}{\mathrm e}
+	\newcommand{\R}{\mathbb{R}}
+	\newcommand{\N}{\mathbb{N}}
+	\newcommand{\Z}{\mathbb{Z}}
+	\newcommand{\Q}{\mathbb{Q}}
+	\newcommand{\Oh}{\mathit{O}}
+	\newcommand{\oh}{\mathit{o}}
+	\newcommand{\ffrac}{\textup{frac}} %textup??
+	\newcommand{\Ex}{\textup{Ex}}
+	\newcommand{\Var}{\textup{Var}}
+	\newcommand{\eps}{\ensuremath{\varepsilon}}
+
+\newcommand{\pp}[1]{\paragraph{#1}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\newcommand{\dt}{\mathrm{d}}
+\newcommand{\mono}[1]{\texttt{#1}}
+\newcommand{\pc}{\;\text{pc}}
+\newcommand{\yr}{\;\text{yr}}
+\newcommand{\AU}{\;\text{AU}}
+\newcommand{\Msun}{\;M_\odot}
+\newcommand{\Msunyr}{\;M_\odot\,\text{yr}^{-1}}
+\newcommand{\kms}{\;\text{km}\,\text{s}^{-1}}
+\newcommand{\gcms}{\;\text{g}\,\text{cm}\,\text{s}^{-1}}
+\newcommand{\tff}{\tau_\text{{f}{f}}}
+\newcommand{\SFRff}{\text{SFR}_\text{{f}{f}}}
+%\newcommand{\REF}{\color{blue}\text{REF}\color{black}}
+\newcommand{\CITE}[1]{\color{darkgreen}\textbf{#1} \color{black}}
+\newcommand{\PLAG}[2]{\color{red}\ding{126}\color{black}#1\color{red}\ding{125}  \color{black}}
+\newcommand{\PAPER}{\color{orange}\textbf{PAPER}\ding{162} \color{black}}
+
+\newcommand{\TODO}[1]{\color{blue}TODO #1\color{black}}
+\newcommand{\ASK}[1]{\color{orange}\circled{?} #1\color{black}}
+\newcommand{\RQ}[1]{\color{red}RQ #1\color{black}}
+\newcommand{\AHA}[1]{\color{green}AHA #1\color{black}}
+
+
+	\def\argmax{\operatornamewithlimits{argmax}} %???
+	\def\argmin{\operatornamewithlimits{argmin}}
+	\def\mod{\operatorname{mod}}
+

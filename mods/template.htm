@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Ventures</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" type="image/x-icon" href="/ventures/favicon.ico">
+
+	<link rel="stylesheet" href="mods/css/normalize.min.css">
+	<link rel="stylesheet" href="mods/css/main.css">
+	<link rel="stylesheet" href="config/webstyles.css">
+
+	<script src="mods/js/m262r110.min.js"></script>
+	<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+	<script type="text/javascript" src="../mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+    
+<body>
+<header><div><a href="index.pl"><img src="mods/img/ventures-logo.png"></a></div></header>
+
+<nav class="sans">
+	<ul>
+	<!--NAV-->
+	<li><input onclick="javascript:addventure()" id="addventure" value="+" onkeypress="return addventure_go(event)" type="text"></li>
+	</ul>
+</nav>
+
+<aside class="sans">
+	
+	<ul class="links">
+	<li><a href="clipboard.pl" class="feature">Clipboard</a></li>
+	<!--TEXLINK-->
+	</ul>
+	
+	<form action="index.pl" method="get">
+	<button type="submit">find:</button>
+	<input type="text" name="search" id="search">
+	<input type="hidden" name="chapter" id="chapter" value="<!--CHAPTER-->">
+	</form>
+	
+	<ul class="filter">
+	<li><a class="RQ" href="index.pl?chapter=<!--CHAPTER-->&csearch=RQ">RQ</a></li>
+	<li><a class="AHA" href="index.pl?chapter=<!--CHAPTER-->&csearch=AHA">AHA</a></li>
+	<li><a class="TODO" href="index.pl?chapter=<!--CHAPTER-->&csearch=TODO">TODO</a></li>
+	<li><a class="ASK" href="index.pl?chapter=<!--CHAPTER-->&csearch=ASK">ASK</a></li>
+	<li><a class="REF" href="index.pl?chapter=<!--CHAPTER-->&csearch=REF">REF</a></li>
+	<!--<li><a class="FILE" href="index.pl?search=FILE">FILE</a></li>-->
+	</ul>
+</aside>
+
+<!--MSG-->
+
+<article>
+<!--ARTICLE-->
+</article>
+
+<div id="toclink">
+	<a href="#" class="sans">&uarr;</a>
+	<a href="javascript:movetoc()" class="sans">TOC</a></div>
+<div id="toc" class="sans"><!--TOC--></div>
+
+<footer>&copy; 2014 by Martin Schrön</footer>
+
+<script src="mods/js/script.js"></script>
+<script><!--IDS--></script>
+</body>
+</html>

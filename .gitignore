@@ -1,0 +1,13 @@
+chapter/*
+clipboard/*
+trash/*
+tex/*
+!tex/crop.sty
+!tex/ventures.cls
+!tex/test.tex
+!tex/preamble.tex
+pully.bat
+sync2kyomu.bat
+sync2y.bat
+*.pnproj
+*.pnps
